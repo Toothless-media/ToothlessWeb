@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toothless Archery - Archery & Outdoor News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a1a;
+            --secondary: #d4a574;
+            --accent: #c84630;
+            --bg: #faf7f2;
+            --text: #2d2d2d;
+            --border: #e0d5c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: var(--bg);
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, transparent 40%, rgba(212, 165, 116, 0.1) 40%, rgba(212, 165, 116, 0.1) 60%, transparent 60%),
+                linear-gradient(45deg, transparent 40%, rgba(200, 70, 48, 0.08) 40%, rgba(200, 70, 48, 0.08) 60%, transparent 60%);
+            background-size: 60px 60px;
+            opacity: 0.4;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            animation: slideInFromLeft 0.8s ease-out;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-weight: 300;
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .articles-column {
+            min-width: 0;
+        }
+
+        /* Ad Sidebar */
+        .ad-sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .ad-container {
+            background: white;
+            border: 2px solid var(--secondary);
+            padding: 1rem;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-placeholder {
+            text-align: center;
+            color: #999;
+        }
+
+        .ad-placeholder p:first-child {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-note {
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        article {
+            background: white;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        article:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        article img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        article:hover img {
+            transform: scale(1.08);
+        }
+
+        .article-content {
+            padding: 1.8rem;
+        }
+
+        article h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        article .date {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        article p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Add Article Form */
+        .add-article-section {
+            background: white;
+            border: 2px solid var(--secondary);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .add-article-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            padding: 0.5rem 0;
+        }
+
+        .btn {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+            padding: 0.9rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a33a28;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(200, 70, 48, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--primary);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #c69564;
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+
+        .empty-state h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--bg);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .ad-sidebar {
+                position: relative;
+                top: 0;
+                order: -1;
+            }
+
+            .ad-container {
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 0.9rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(200, 70, 48, 0.9);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        article:hover .delete-btn {
+            opacity: 1;
+        }
+
+        .delete-btn:hover {
+            background: rgba(163, 58, 40, 1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Toothless Archery</h1>
+            <div class="tagline">Archery & Outdoor News</div>
+        </div>
+    </header>
+
+
+
+    <main>
+        <!-- Articles Section -->
+        <div class="content-wrapper">
+            <div class="articles-column">
+                <div class="articles-grid" id="articles-container">
+                    <!-- Articles will be loaded here -->
+                </div>
+            </div>
+            
+            <aside class="ad-sidebar">
+                <div class="ad-container">
+                    <!-- Google AdSense code will go here -->
+                    <div class="ad-placeholder">
+                        <p>Google Ads</p>
+                        <p class="ad-note">Place your AdSense code here</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toothless Archery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Articles will be loaded from articles.json
+        // You can also modify this to fetch from an API endpoint
+        
+        async function loadArticles() {
+            try {
+                // Option 1: Load from a JSON file
+                // const response = await fetch('articles.json');
+                // const articles = await response.json();
+                
+                // Option 2: For now, using sample data
+                // Replace this with your actual data source
+                const articles = [
+                    {
+                        id: 1,
+                        title: "Traditional Archery Renaissance",
+                        date: "December 15, 2025",
+                        content: "Traditional archery techniques are experiencing a remarkable resurgence among modern archers. From instinctive shooting to mastering the longbow, enthusiasts are rediscovering ancient methods that emphasize connection with the bow and natural form.",
+                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%231a3a1a' width='800' height='500'/%3E%3Cpath d='M400 100 L450 250 L400 400 L350 250 Z' fill='%23d4a574' opacity='0.3'/%3E%3Cpath d='M300 150 L400 250 L300 350 Z' fill='%23c84630' opacity='0.2'/%3E%3C/svg%3E"
+                    },
+                    {
+                        id: 2,
+                        title: "Wilderness Survival: Essential Skills",
+                        date: "December 20, 2025",
+                        content: "Mastering wilderness survival requires more than just equipment. Learn the fundamental skills every outdoor enthusiast should know, from fire-starting techniques to natural shelter construction and wild edible identification.",
+                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%232d5016' width='800' height='500'/%3E%3Ccircle cx='400' cy='250' r='100' fill='%23d4a574' opacity='0.2'/%3E%3Cpath d='M200 400 Q400 300 600 400' stroke='%23c84630' stroke-width='3' fill='none' opacity='0.4'/%3E%3C/svg%3E"
+                    },
+                    {
+                        id: 3,
+                        title: "Compound Bow Setup Guide",
+                        date: "January 3, 2026",
+                        content: "Setting up a compound bow correctly is crucial for accuracy and consistency. This comprehensive guide walks you through paper tuning, sight adjustment, and finding your optimal draw length and weight for peak performance.",
+                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%23d4a574' width='800' height='500'/%3E%3Ccircle cx='400' cy='250' r='80' fill='%231a3a1a' opacity='0.3'/%3E%3Cpath d='M300 250 L500 250 M400 150 L400 350' stroke='%23c84630' stroke-width='4' opacity='0.5'/%3E%3C/svg%3E"
+                    }
+                ];
+                
+                renderArticles(articles);
+            } catch (error) {
+                console.error('Error loading articles:', error);
+                document.getElementById('articles-container').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Unable to Load Articles</h3>
+                        <p>Please check your data source.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-container');
+            
+            if (!articles || articles.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No Articles Yet</h3>
+                        <p>Check back soon for new content!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = articles.map((article, index) => `
+                <article style="animation-delay: ${index * 0.1}s">
+                    ${article.image ? `<img src="${article.image}" alt="${article.title}">` : ''}
+                    <div class="article-content">
+                        <h2>${article.title}</h2>
+                        <div class="date">${article.date}</div>
+                        <p>${article.content}</p>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Initialize on page load
+        loadArticles();
+    </script>
+</body>
+</html>

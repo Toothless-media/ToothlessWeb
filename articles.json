@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Traditional Archery Renaissance",
+        "date": "December 15, 2025",
+        "content": "Traditional archery techniques are experiencing a remarkable resurgence among modern archers. From instinctive shooting to mastering the longbow, enthusiasts are rediscovering ancient methods that emphasize connection with the bow and natural form.",
+        "image": "images/traditional-archery.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Wilderness Survival: Essential Skills",
+        "date": "December 20, 2025",
+        "content": "Mastering wilderness survival requires more than just equipment. Learn the fundamental skills every outdoor enthusiast should know, from fire-starting techniques to natural shelter construction and wild edible identification.",
+        "image": "images/wilderness-survival.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Compound Bow Setup Guide",
+        "date": "January 3, 2026",
+        "content": "Setting up a compound bow correctly is crucial for accuracy and consistency. This comprehensive guide walks you through paper tuning, sight adjustment, and finding your optimal draw length and weight for peak performance.",
+        "image": "images/compound-bow.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Backcountry Navigation Tips",
+        "date": "January 5, 2026",
+        "content": "Getting lost in the backcountry can be dangerous. Learn essential navigation techniques using map, compass, and GPS, plus how to read terrain features and maintain situational awareness in remote wilderness areas.",
+        "image": "images/navigation.jpg"
+    }
+]
