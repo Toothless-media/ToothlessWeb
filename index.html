@@ -426,35 +426,9 @@
         
         async function loadArticles() {
             try {
-                // Option 1: Load from a JSON file
-                // const response = await fetch('articles.json');
-                // const articles = await response.json();
-                
-                // Option 2: For now, using sample data
-                // Replace this with your actual data source
-                const articles = [
-                    {
-                        id: 1,
-                        title: "Traditional Archery Renaissance",
-                        date: "December 15, 2025",
-                        content: "Traditional archery techniques are experiencing a remarkable resurgence among modern archers. From instinctive shooting to mastering the longbow, enthusiasts are rediscovering ancient methods that emphasize connection with the bow and natural form.",
-                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%231a3a1a' width='800' height='500'/%3E%3Cpath d='M400 100 L450 250 L400 400 L350 250 Z' fill='%23d4a574' opacity='0.3'/%3E%3Cpath d='M300 150 L400 250 L300 350 Z' fill='%23c84630' opacity='0.2'/%3E%3C/svg%3E"
-                    },
-                    {
-                        id: 2,
-                        title: "Wilderness Survival: Essential Skills",
-                        date: "December 20, 2025",
-                        content: "Mastering wilderness survival requires more than just equipment. Learn the fundamental skills every outdoor enthusiast should know, from fire-starting techniques to natural shelter construction and wild edible identification.",
-                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%232d5016' width='800' height='500'/%3E%3Ccircle cx='400' cy='250' r='100' fill='%23d4a574' opacity='0.2'/%3E%3Cpath d='M200 400 Q400 300 600 400' stroke='%23c84630' stroke-width='3' fill='none' opacity='0.4'/%3E%3C/svg%3E"
-                    },
-                    {
-                        id: 3,
-                        title: "Compound Bow Setup Guide",
-                        date: "January 3, 2026",
-                        content: "Setting up a compound bow correctly is crucial for accuracy and consistency. This comprehensive guide walks you through paper tuning, sight adjustment, and finding your optimal draw length and weight for peak performance.",
-                        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect fill='%23d4a574' width='800' height='500'/%3E%3Ccircle cx='400' cy='250' r='80' fill='%231a3a1a' opacity='0.3'/%3E%3Cpath d='M300 250 L500 250 M400 150 L400 350' stroke='%23c84630' stroke-width='4' opacity='0.5'/%3E%3C/svg%3E"
-                    }
-                ];
+                // Load from articles.json file
+                const response = await fetch('articles.json');
+                const articles = await response.json();
                 
                 renderArticles(articles);
             } catch (error) {
