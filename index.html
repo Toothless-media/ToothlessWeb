@@ -481,7 +481,9 @@
                 return;
             }
 
-            container.innerHTML = articles.map((article, index) => `
+            const sortedArticles = [...articles].sort((a, b) => b.id - a.id);
+
+            container.innerHTML = sortedArticles.map((article, index) => `
                 <article style="animation-delay: ${index * 0.1}s">
                     ${article.image ? `<img src="${article.image}" alt="${article.title}">` : ''}
                     <div class="article-content">
