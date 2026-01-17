@@ -33,5 +33,12 @@
         "date": "January 13, 2026",
         "content": "Bowtech has launched their 2026 bows, including the Alliance, and Alliance 33. They both include updated DeadLock Cam system for easier tuning of your bow. The risers are new and not just slightly modified previous years versions. You can find out more at <a href='https://www.youtube.com/watch?v=BbAyB5rL2xI'>Podium Archer </a>youtube channel.",
         "image": "images/bowtechalliance.png"
+    },
+    {
+        "id": 6,
+        "title": "Total Archery Challenge 2026",
+        "date": "January 17, 2026",
+        "content": "Total Archery Challenge is currently registering for its various locations. For those who have never been, it is probably one fo the funnest and most interesting archery events. It is not a tournament. It is literally just something fun to do, and a way to test your equipment. Consisting of anywhere from 4 to 7 seperate courses with upwards of 25 targets per course it remains one of the most challenging things I have ever done. I first went to TAC at Seven Springs Pennsylvania back in 2023, and absolutley enjoyed it though the mountains kicked my ass. I'm from the Niagara Falls area, it is very flat. I was dieing on some of those hiking trails, but still went more times after that. I highly recommend it to everyone!  Check it out at <a href='https://totalarcherychallenge.com'>Total Archery Challenge </a>.",
+        "image": "images/TAC2026.png"
     }
 ]
